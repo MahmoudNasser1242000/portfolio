@@ -1,0 +1,87 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+
+// shadcn/ui components
+import { Button } from "@/components/ui/button";
+import {
+    Sheet,
+    SheetContent,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+import { ModeToggle } from "./ModeToggle";
+
+import logo from "../../../public/assets/images/logo.png";
+import { navLinks } from "@/constants/navLinks";
+import { INavLinks } from "@/types/interfaces";
+
+export default function NavBar() {
+    const [open, setOpen] = useState(false);
+    return (
+        <nav className="border-b bg-white dark:bg-black">
+            <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4">
+                {/* Logo */}
+                <a href="/">
+                    <Image
+                        src={logo}
+                        alt="Logo"
+                        width={200}
+                        height={200}
+                        className="object-contain"
+                    />
+                </a>
+
+                {/* Desktop Nav Links */}
+                <div className="mx-auto hidden space-x-6 md:flex">
+                    {navLinks.map(({ title, href }: INavLinks) => (
+                        <a
+                            key={href}
+                            href={href}
+                            className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                        >
+                            {title}
+                        </a>
+                    ))}
+                </div>
+
+                {/* Dark Mode Toggle + Mobile Menu */}
+                <div className="flex items-center space-x-2">
+                    <ModeToggle />
+
+                    {/* Mobile Menu Button (hidden on desktop) */}
+                    <div className="md:hidden">
+                        <Sheet open={open} onOpenChange={setOpen}>
+                            <SheetTrigger asChild>
+                                <Button variant="ghost" size="icon">
+                                    <Menu className="h-5 w-5" />
+                                </Button>
+                            </SheetTrigger>
+                            <SheetContent side="left" className="w-[200px] bg-white dark:bg-black">
+                                <SheetHeader>
+                                    <SheetTitle className="text-xl font-bold text-gray-800 dark:text-gray-100">
+                                        Menu
+                                    </SheetTitle>
+                                </SheetHeader>
+                                <div className="mt-4 flex flex-col space-y-4">
+                                    {navLinks.map(({ title, href }: INavLinks) => (
+                                        <a
+                                            key={href}
+                                            href={href}
+                                            className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                                        >
+                                            {title}
+                                        </a>
+                                    ))}
+                                </div>
+                            </SheetContent>
+                        </Sheet>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    );
+}
