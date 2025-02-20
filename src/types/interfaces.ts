@@ -1,7 +1,10 @@
 import { LucideIcon } from "lucide-react";
 
-export interface INavLinks {
-    title: string;
+export interface ISocialMedia {
     href: string;
-    icon?: LucideIcon;
+    icon: LucideIcon;
+}
+
+export interface INavLinks extends ISocialMedia {
+    title: string;
 }

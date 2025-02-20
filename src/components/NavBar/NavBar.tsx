@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 // shadcn/ui components
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
     Sheet,
     SheetContent,
@@ -18,6 +18,7 @@ import { ModeToggle } from "./ModeToggle";
 import logo from "../../../public/assets/images/logo.png";
 import { navLinks } from "@/constants/navLinks";
 import { INavLinks } from "@/types/interfaces";
+import { cn } from "@/lib/utils";
 
 export default function NavBar() {
     const [open, setOpen] = useState(false);
@@ -37,7 +38,7 @@ export default function NavBar() {
 
                 {/* Desktop Nav Links */}
                 <div className="mx-auto hidden space-x-6 md:flex">
-                    {navLinks.map(({ title, href }: INavLinks) => (
+                    {navLinks.map(({ title, href }: {title: string, href: string}) => (
                         <a
                             key={href}
                             href={href}
@@ -60,20 +61,25 @@ export default function NavBar() {
                                     <Menu className="h-5 w-5" />
                                 </Button>
                             </SheetTrigger>
-                            <SheetContent side="left" className="w-[200px] bg-white dark:bg-black">
+                            <SheetContent side="left" className="w-[300px] bg-white dark:bg-black">
                                 <SheetHeader>
                                     <SheetTitle className="text-xl font-bold text-gray-800 dark:text-gray-100">
                                         Menu
                                     </SheetTitle>
                                 </SheetHeader>
-                                <div className="mt-4 flex flex-col space-y-4">
-                                    {navLinks.map(({ title, href }: INavLinks) => (
+                                <div className="mt-6 flex flex-col space-y-4">
+                                    {navLinks.map(({ title, href, icon: Icon }: INavLinks) => (
                                         <a
                                             key={href}
                                             href={href}
-                                            className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                                            className={cn(
+                                                "px-4 py-2 rounded-lg transition-colors", buttonVariants({variant: "ghost"})
+                                            )}
                                         >
-                                            {title}
+                                            <span className="w-full flex items-center justify-start space-x-2">
+                                                <span><Icon/></span>
+                                                <span>{title}</span>
+                                            </span>
                                         </a>
                                     ))}
                                 </div>
