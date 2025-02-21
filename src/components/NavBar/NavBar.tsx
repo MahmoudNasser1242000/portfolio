@@ -17,7 +17,7 @@ import { ModeToggle } from "./ModeToggle";
 
 import logo from "../../../public/assets/images/logo.png";
 import { navLinks } from "@/constants/navLinks";
-import { INavLinks } from "@/types/interfaces";
+import { INavLinksAndSocialMedia } from "@/types/interfaces";
 import { cn } from "@/lib/utils";
 
 export default function NavBar() {
@@ -32,17 +32,17 @@ export default function NavBar() {
                         alt="Logo"
                         width={200}
                         height={200}
-                        className="object-contain"
+                        className="object-cover"
                     />
                 </a>
 
                 {/* Desktop Nav Links */}
                 <div className="mx-auto hidden space-x-6 md:flex">
-                    {navLinks.map(({ title, href }: {title: string, href: string}) => (
+                    {navLinks.map(({ title, href }: { title: string, href: string }) => (
                         <a
                             key={href}
                             href={href}
-                            className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                            className="text-md font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
                         >
                             {title}
                         </a>
@@ -64,20 +64,26 @@ export default function NavBar() {
                             <SheetContent side="left" className="w-[300px] bg-white dark:bg-black">
                                 <SheetHeader>
                                     <SheetTitle className="text-xl font-bold text-gray-800 dark:text-gray-100">
-                                        Menu
+                                        <Image
+                                            src={logo}
+                                            alt="Logo"
+                                            width={200}
+                                            height={200}
+                                            className="object-cover mt-[-20px] ml-[-20px]"
+                                        />
                                     </SheetTitle>
                                 </SheetHeader>
-                                <div className="mt-6 flex flex-col space-y-4">
-                                    {navLinks.map(({ title, href, icon: Icon }: INavLinks) => (
+                                <div className="mt-2 flex flex-col space-y-4">
+                                    {navLinks.map(({ title, href, icon: Icon }: INavLinksAndSocialMedia) => (
                                         <a
                                             key={href}
                                             href={href}
                                             className={cn(
-                                                "px-4 py-2 rounded-lg transition-colors", buttonVariants({variant: "ghost"})
+                                                "px-4 py-2 rounded-lg transition-colors", buttonVariants({ variant: "ghost" })
                                             )}
                                         >
                                             <span className="w-full flex items-center justify-start space-x-2">
-                                                <span><Icon/></span>
+                                                <span><Icon /></span>
                                                 <span>{title}</span>
                                             </span>
                                         </a>
