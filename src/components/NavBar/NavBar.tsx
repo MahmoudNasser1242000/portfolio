@@ -61,7 +61,7 @@ export default function NavBar() {
                                     <Menu className="h-5 w-5" />
                                 </Button>
                             </SheetTrigger>
-                            <SheetContent side="left" className="w-[300px] bg-white dark:bg-black">
+                            <SheetContent side="left" className="sm:w-[40%] md:w-[50%] w-[60%]  bg-white dark:bg-black">
                                 <SheetHeader>
                                     <SheetTitle className="text-xl font-bold text-gray-800 dark:text-gray-100">
                                         <Image
