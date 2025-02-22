@@ -85,29 +85,31 @@ const Home = () => {
         </div>
 
         {/* Profile Image */}
-        <div className="relative flex items-center justify-center mt-6 sm:mt-0 w-full">
-            <Effect className="size-full" />
-            <Effect
-                variant={"square"}
-                size={"sm"}
-                className="top-[-2%] left-[25%] -rotate-12"
-            />
-            <Effect
-                variant={"square"}
-                size={"sm"}
-                className="top-[50%] right-[9%] rotate-12"
-            />
-            <Effect
-                variant={"square"}
-                size={"sm"}
-                className="bottom-[18%] left-[12%] rotate-12"
-            />
-            <div className=" w-[280px] h-[280px] rounded-full">
-                <Image
-                    src={logo}
-                    alt="profile img"
-                    className="object-cover w-full h-full rounded-full ring-4 ring-primary ring-offset-[5px] ring-offset-background"
+        <div className="flex items-center justify-center mt-6 sm:mt-0 w-full">
+            <div className="w-[280px] h-[280px] relative">
+                <Effect className="size-full top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]" />
+                <Effect
+                    variant={"square"}
+                    size={"sm"}
+                    className="top-[-11%] left-[25%] -rotate-12"
                 />
+                <Effect
+                    variant={"square"}
+                    size={"sm"}
+                    className="top-[50%] right-[-14%] rotate-12"
+                />
+                <Effect
+                    variant={"square"}
+                    size={"sm"}
+                    className="bottom-[18%] left-[-6%] rotate-12"
+                />
+                <div className="size-full rounded-full">
+                    <Image
+                        src={logo}
+                        alt="profile img"
+                        className="object-cover w-full h-full rounded-full ring-4 ring-primary ring-offset-[5px] ring-offset-background"
+                    />
+                </div>
             </div>
         </div>
     </div>
