@@ -44,7 +44,7 @@ const Footer = () => {
                                     key={href}
                                     href={href}
                                     target="_blank"
-                                    className="text-gray-700 transition hover:text-gray-700/75"
+                                    className="text-gray-700 transition hover:text-gray-700/75 dark:text-gray-300 dark:hover:text-gray-300/75"
                                 >
                                     <TooltipProvider>
                                         <Tooltip>

@@ -24,14 +24,14 @@ export default function NavBar() {
     const [open, setOpen] = useState(false);
     return (
         <nav className="border-b bg-white dark:bg-black">
-            <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4">
+            <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4">
                 {/* Logo */}
                 <a href="/">
                     <Image
                         src={logo}
                         alt="Logo"
-                        width={200}
-                        height={200}
+                        width={210}
+                        height={210}
                         className="object-cover"
                     />
                 </a>
