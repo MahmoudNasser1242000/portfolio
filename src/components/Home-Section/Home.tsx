@@ -15,7 +15,7 @@ import Image from "next/image";
 import { Effect } from "../ui/effects";
 
 const Home = () => {
-    return <div className="py-16 px-4 sm:px-[70px] md:px-20 lg:px-16 flex gap-y-12 flex-col-reverse lg:flex-row items-center justify-between">
+    return <div className="pb-16 pt-36 px-6 sm:px-[70px] md:px-20 lg:px-16 flex gap-y-12 flex-col-reverse lg:flex-row items-center justify-between">
         <div className="flex items-center justify-between space-x-10">
             <ul className="p-3 flex flex-col tems-center justify-center space-y-4 border border-1 rounded-md">
                 {
@@ -85,29 +85,31 @@ const Home = () => {
         </div>
 
         {/* Profile Image */}
-        <div className="relative flex items-center justify-center mt-6 sm:mt-0 w-full">
-            <Effect className="size-full" />
-            <Effect
-                variant={"square"}
-                size={"sm"}
-                className="top-[-2%] left-[25%] -rotate-12"
-            />
-            <Effect
-                variant={"square"}
-                size={"sm"}
-                className="top-[50%] right-[9%] rotate-12"
-            />
-            <Effect
-                variant={"square"}
-                size={"sm"}
-                className="bottom-[18%] left-[12%] rotate-12"
-            />
-            <div className=" w-[280px] h-[280px] rounded-full">
-                <Image
-                    src={logo}
-                    alt="profile img"
-                    className="object-cover w-full h-full rounded-full ring-4 ring-primary ring-offset-[5px] ring-offset-background"
+        <div className="flex items-center justify-center mt-6 sm:mt-0 w-full">
+            <div className="w-[280px] h-[280px] relative">
+                <Effect className="size-full top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]" />
+                <Effect
+                    variant={"square"}
+                    size={"sm"}
+                    className="top-[-11%] left-[25%] -rotate-12"
                 />
+                <Effect
+                    variant={"square"}
+                    size={"sm"}
+                    className="top-[50%] right-[-14%] rotate-12"
+                />
+                <Effect
+                    variant={"square"}
+                    size={"sm"}
+                    className="bottom-[18%] left-[-6%] rotate-12"
+                />
+                <div className="size-full rounded-full">
+                    <Image
+                        src={logo}
+                        alt="profile img"
+                        className="object-cover w-full h-full rounded-full ring-4 ring-primary ring-offset-[5px] ring-offset-background"
+                    />
+                </div>
             </div>
         </div>
     </div>

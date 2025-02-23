@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar/NavBar";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/Footer/Footer";
+import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn(`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden selection:bg-primary selection:text-white`)}
       >
         <ThemeProvider
             attribute="class"
