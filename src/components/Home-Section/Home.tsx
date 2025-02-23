@@ -15,7 +15,7 @@ import Image from "next/image";
 import { Effect } from "../ui/effects";
 
 const Home = () => {
-    return <div className="py-16 px-4 sm:px-[70px] md:px-20 lg:px-16 flex gap-y-12 flex-col-reverse lg:flex-row items-center justify-between">
+    return <div className="pb-16 pt-36 px-6 sm:px-[70px] md:px-20 lg:px-16 flex gap-y-12 flex-col-reverse lg:flex-row items-center justify-between">
         <div className="flex items-center justify-between space-x-10">
             <ul className="p-3 flex flex-col tems-center justify-center space-y-4 border border-1 rounded-md">
                 {
