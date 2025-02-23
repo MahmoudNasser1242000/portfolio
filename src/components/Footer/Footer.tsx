@@ -16,16 +16,15 @@ const Footer = () => {
         <footer className="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
             <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8">
                 <div className="flex justify-center">
-                    <Image src={logo} alt="log" width={360} height={360} className="object-cover"/>
+                    <Image src={logo} alt="log" width={360} height={360} className="object-cover" />
                 </div>
 
                 <p className="mx-auto max-w-md text-center leading-relaxed text-gray-500">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa cum
-                    itaque neque.
+                    You can contact me and also explore more of my work through my social media links. I will be happy to respond to you and hear all your opinions.
                 </p>
 
                 <ul className="mt-6 flex flex-wrap justify-center gap-6">
-                    {navLinks.map(({ title, href }: {title: string, href: string}) => (
+                    {navLinks.map(({ title, href }: { title: string, href: string }) => (
                         <a
                             key={href}
                             href={href}
