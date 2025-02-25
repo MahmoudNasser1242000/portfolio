@@ -23,6 +23,17 @@ export default defineType({
         }),
 
         defineField({
+            name: "value",
+            type: "number",
+            title: "percentage",
+            validation: (Rule) => [
+                Rule.required(),
+                Rule.min(0).error("value must be at least 1%"), 
+                Rule.max(100).error("value must be at most 100%")
+            ],
+        }),
+
+        defineField({
             name: "category",
             type: "string",
             title: "category",
