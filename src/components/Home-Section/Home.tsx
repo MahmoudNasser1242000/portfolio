@@ -87,7 +87,6 @@ const Home = () => {
         {/* Profile Image */}
         <div className="flex items-center justify-center mt-6 sm:mt-0 w-full">
             <div className="w-[280px] h-[280px] relative">
-                <Effect className="size-full top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]" />
                 <Effect
                     variant={"square"}
                     size={"sm"}
@@ -103,7 +102,8 @@ const Home = () => {
                     size={"sm"}
                     className="bottom-[18%] left-[-6%] rotate-12"
                 />
-                <div className="size-full rounded-full">
+                <div className="size-full rounded-full relative">
+                    <Effect className="size-full top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]" />
                     <Image
                         src={logo}
                         alt="profile img"

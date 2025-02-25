@@ -15,7 +15,7 @@ import {
 import { Menu } from "lucide-react";
 import { ModeToggle } from "./ModeToggle";
 
-import logo from "../../../public/assets/images/logo.png";
+import logo from "../../../public/assets/images/logo2.png";
 import { navLinks } from "@/constants/navLinks";
 import { INavLinksAndSocialMedia } from "@/types/interfaces";
 import { cn } from "@/lib/utils";
@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils";
 export default function NavBar() {
     const [open, setOpen] = useState(false);
     return (
-        <nav className="fixed top-0 left-0 z-50 nav w-full border-b bg-white dark:bg-black py-0">
+        <nav className="fixed top-0 left-0 z-50 nav w-full border-b bg-white dark:bg-black">
             <div className="mx-auto flex max-w-screen-xl h-full items-center justify-between px-4">
                 {/* Logo */}
                 <a href="/">
@@ -32,7 +32,7 @@ export default function NavBar() {
                         alt="Logo"
                         width={210}
                         height={210}
-                        className="object-cover"
+                        className="object-cover mb-3"
                     />
                 </a>
 

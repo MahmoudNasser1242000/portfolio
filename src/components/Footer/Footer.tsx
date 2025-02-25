@@ -8,14 +8,14 @@ import {
 } from "@/components/ui/tooltip"
 import { navLinks } from "@/constants/navLinks";
 import { INavLinksAndSocialMedia } from "@/types/interfaces";
-import logo from "../../../public/assets/images/logo.png";
+import logo from "../../../public/assets/images/logo2.png";
 import Image from "next/image";
 
 const Footer = () => {
     return <div>
         <footer className="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
             <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8">
-                <div className="flex justify-center">
+                <div className="flex justify-center mb-1">
                     <Image src={logo} alt="log" width={360} height={360} className="object-cover" />
                 </div>
 

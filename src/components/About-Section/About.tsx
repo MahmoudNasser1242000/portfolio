@@ -1,8 +1,9 @@
 import React from "react";
 import { Effect } from "../ui/effects";
-import { CircleArrowRight } from "lucide-react";
+import { CircleArrowRight, Section } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
+import SectionTitle from "../Section-Title/SectionTitle";
 
 const About = () => {
     return <div className="relative px-8 sm:px-0 flex items-center justify-center my-16">
@@ -13,11 +14,11 @@ const About = () => {
                 size={"default"}
                 className="-top-4 -right-5 rotate-12 z-[-10]"
             />
-            <h2 className="text-primary font-semibold">About Me</h2>
-            <span className="text-[30px]">A Quick Introduction About Me</span>
+            <SectionTitle title="About Me" desc="A Quick Introduction About Me" />
             <p className="text-md text-gray-500 mt-6">
-                <span>I obtained a bachelor’s degree with distinction from the High Institute for Management and Information Technology - Kafr Elsheikh, I also obtained a certificate from Route Academy in Alexandria after one year of training in the field of frontend development.</span>
-                <span></span>
+                <span>
+                    I obtained a bachelor’s degree with distinction from the High Institute for Management and Information Technology - Kafr Elsheikh, I also obtained a certificate from Route Academy in Alexandria after one year of training in the field of frontend development.
+                </span>
             </p>
             <div className="mt-6 flex items-end space-x-8">
                 <p className="flex flex-col items-start">
