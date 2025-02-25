@@ -21,5 +21,18 @@ export default defineType({
             type: "image",
             title: "image",
         }),
+
+        defineField({
+            name: "category",
+            type: "string",
+            title: "category",
+            options: {
+                list: [
+                    {title: "Frontend", value: "frontend"},
+                    {title: "Tools", value: "tools"}, 
+                ],
+            },
+            validation: (Rule) => Rule.required(),
+        }),
     ],
 });
