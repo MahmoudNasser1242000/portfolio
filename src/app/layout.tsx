@@ -27,9 +27,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-behavior-smooth duration-300">
       <body
-        className={cn(`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden selection:bg-primary selection:text-white`)}
+        className={cn(geistSans.variable, geistMono.variable, `antialiased overflow-x-hidden selection:bg-primary selection:text-white`)}
       >
         <ThemeProvider
             attribute="class"

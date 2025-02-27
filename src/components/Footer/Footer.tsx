@@ -38,9 +38,8 @@ const Footer = () => {
                 <ul className="mt-6 flex justify-center gap-x-5 md:gap-8">
                     {
                         socialMedia.map(({ title, href, icon: Icon }: INavLinksAndSocialMedia) => (
-                            <li>
+                            <li key={href}>
                                 <a
-                                    key={href}
                                     href={href}
                                     target="_blank"
                                     className="text-gray-700 transition hover:text-gray-700/75 dark:text-gray-300 dark:hover:text-gray-300/75"

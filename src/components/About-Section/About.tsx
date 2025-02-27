@@ -6,7 +6,7 @@ import { buttonVariants } from "../ui/button";
 import SectionTitle from "../Section-Title/SectionTitle";
 
 const About = () => {
-    return <div className="relative px-8 sm:px-0 flex items-center justify-center my-16">
+    return <div className="relative px-8 sm:px-0 flex items-center justify-center my-16" id="about">
         <Effect className="-left-32 md:-left-44 -top-12" />
         <div className="relative max-w-[50rem] bg-background/90 border px-8 py-6 rounded-[12px]">
             <Effect
