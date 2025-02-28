@@ -9,8 +9,8 @@ interface ISectionTitleProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 const SectionTitle : FC<ISectionTitleProps> = ({title, desc, className, h_size, p_size, ...props}) => {
     return <div className={cn("flex flex-col", className)} {...props}>
-        <h2 className={`text-primary font-semibold text-[${h_size}px]`}>{title}</h2>
-        <p className={`text-[30px] text-[${p_size}px]`}>{desc}</p>
+        <h2 className={`text-primary font-semibold text-[${h_size}px] text-center`}>{title}</h2>
+        <p className={`text-[30px] text-[${p_size}px] text-center`}>{desc}</p>
     </div>;
 };
 

@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils";
 export default function NavBar() {
     const [open, setOpen] = useState(false);
     return (
-        <nav className="fixed top-0 left-0 z-50 nav w-full border-b bg-white dark:bg-black">
+        <nav className="fixed top-0 left-0 z-0 nav w-full border-b bg-white dark:bg-black">
             <div className="mx-auto flex max-w-screen-xl h-full items-center justify-between px-4">
                 {/* Logo */}
                 <a href="/">

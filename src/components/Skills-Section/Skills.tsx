@@ -3,7 +3,7 @@ import SectionTitle from "../Section-Title/SectionTitle";
 import { Effect } from "../ui/effects";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { tabItems } from "@/constants/TabItems";
-import SkillsContainer from "../Skills-Container/SkillsContainer";
+import SkillsContainer from "./Skills-Container/SkillsContainer";
 import { getSkills } from "@/lib/skills";
 
 const Skills = async () => {
