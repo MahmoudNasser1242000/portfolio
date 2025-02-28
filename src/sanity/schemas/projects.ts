@@ -57,15 +57,35 @@ export default defineType({
 
         defineField({
             name: "githubLink",
-            type: "url",
+            type: "array",
             title: "github repository link",
-            validation: (Rule) =>
-                Rule.uri({
+            of: [{
+                type: "string", 
+                validation: (Rule) => Rule.uri({
                     scheme: ["http", "https", "ftp"],
                     allowRelative: false,
                     relativeOnly: false,
                 }).error("only allow (http, https, ftp)"), // only allow http, https, ftp
+            }],
+            validation: (Rule) => ([
+                Rule.unique(),
+                Rule.required(),
+                Rule.min(1).error("at least one link"),
+                Rule.max(2).error("at most 2 links"),
+            ]),
         }),
+
+        // defineField({
+        //     name: "githubLink",
+        //     type: "url",
+        //     title: "github repository link",
+        //     validation: (Rule) =>
+        //         Rule.uri({
+        //             scheme: ["http", "https", "ftp"],
+        //             allowRelative: false,
+        //             relativeOnly: false,
+        //         }).error("only allow (http, https, ftp)"), // only allow http, https, ftp
+        // }),
 
         defineField({
             name: "isResponsive",
