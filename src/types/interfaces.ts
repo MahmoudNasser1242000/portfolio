@@ -8,9 +8,17 @@ export interface INavLinksAndSocialMedia {
 
 export type TCategory = "frontend" | "tools";
 
+export interface ITabItems {
+    title: string;
+    value: string;
+    icon: LucideIcon;
+}
+
+//schemas for sanity
 export interface IImage {
     image: {
         _type: string;
+        _key?: number;
         asset: {
             _ref: string;
             _type: string;
@@ -18,15 +26,28 @@ export interface IImage {
     }
 }
 
-export interface ITabItems {
-    title: string;
-    value: string;
-    icon: LucideIcon;
-}
-
 export interface ISkills extends IImage {
     _id: string;
     label: string;
     category: TCategory;
     value: number;
+}
+
+export interface IProjects {
+    _id: string;
+    title: string;
+    images: {
+        _type: string;
+        _key?: number;
+        asset: {
+            _ref: string;
+            _type: string;
+        };
+    }[];
+    description: string; 
+    tags: string[];
+    demoLink: string;
+    githubLink: string[]; 
+    isResponsive: boolean;
+    publishedAt: Date;
 }
