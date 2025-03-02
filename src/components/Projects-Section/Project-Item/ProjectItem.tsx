@@ -1,31 +1,22 @@
 import React from "react";
 import {
     Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
 import ProjectCard from "../Project-Card/ProjectCard";
+import { IProjects } from "@/types/interfaces";
+import DialogProjectContent from "../Dialog-Content/DialogContent";
 
 
-const ProjectItem = () => {
+const ProjectItem = ({ project }: { project: IProjects }) => {
     return <div className="cursor-pointer w-fit">
         <Dialog>
             <DialogTrigger>
-                <ProjectCard />
+                <ProjectCard project={project} />
             </DialogTrigger>
-            
-            <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>Are you absolutely sure?</DialogTitle>
-                    <DialogDescription>
-                        This action cannot be undone. This will permanently delete your account
-                        and remove your data from our servers.
-                    </DialogDescription>
-                </DialogHeader>
-            </DialogContent>
+            <div className="px-6 sm:px-12 md:px-16 lg:px-20">
+                <DialogProjectContent project={project} />
+            </div>
         </Dialog>
     </div>;
 };
