@@ -135,3 +135,7 @@ body {
 .dialogContent::-webkit-scrollbar-thumb:active {
   background-color: #E11D48;
 }
+
+.Toastify__close-button {
+  @apply pr-3 sm:pr-1;      
+}

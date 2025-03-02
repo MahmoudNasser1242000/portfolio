@@ -51,3 +51,10 @@ export interface IProjects {
     isResponsive: boolean;
     publishedAt: Date;
 }
+
+// contact form data
+export interface IFormData {
+    username: string;
+    email: string;
+    message: string
+}

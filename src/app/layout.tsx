@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar/NavBar";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/Footer/Footer";
 import { cn } from "@/lib/utils";
+import { ToastContainer } from 'react-toastify';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,15 +33,16 @@ export default function RootLayout({
         className={cn(geistSans.variable, geistMono.variable, `antialiased overflow-x-hidden selection:bg-primary selection:text-white`)}
       >
         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <NavBar/>
-            {children}
-            <Footer/>
-          </ThemeProvider>
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NavBar />
+          {children}
+          <Footer />
+          <ToastContainer />
+        </ThemeProvider>
       </body>
     </html>
   );
