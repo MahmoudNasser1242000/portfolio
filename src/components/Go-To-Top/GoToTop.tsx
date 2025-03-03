@@ -24,8 +24,8 @@ const GoToTop = () => {
 
     return <>
         <Link to="home" smooth={true} duration={500} className={cn(
-            "fixed bottom-7 right-6 size-10 z-[2000] opacity-100 ",
-            !ArrowUp && "opacity-0 cursor-none z-0",  buttonVariants({variant: "default", className: "px-6 transition-opacity duration-500"}))}>
+            "fixed bottom-7 right-6 size-10 z-[2000] opacity-100  duration-500 ease-out",
+            !ArrowUp && "opacity-0 cursor-none z-0",  buttonVariants({variant: "default", className: "px-6 transition-all sm:hover:scale-110 duration-500 ease-out"}))}>
             <ChevronsUp className="ChevronsUp" />
         </Link>
     </>;

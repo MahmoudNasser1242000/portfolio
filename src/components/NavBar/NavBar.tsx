@@ -14,7 +14,7 @@ import {
 import { Menu } from "lucide-react";
 import { ModeToggle } from "./ModeToggle";
 
-import logo from "../../../public/assets/images/logo2.png";
+import logo from "../../../public/assets/images/main_logo.svg";
 import { navLinks } from "@/constants/navLinks";
 import { INavLinksAndSocialMedia } from "@/types/interfaces";
 import { cn } from "@/lib/utils";
