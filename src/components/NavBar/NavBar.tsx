@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import Image from "next/image";
 
@@ -19,6 +18,7 @@ import logo from "../../../public/assets/images/logo2.png";
 import { navLinks } from "@/constants/navLinks";
 import { INavLinksAndSocialMedia } from "@/types/interfaces";
 import { cn } from "@/lib/utils";
+import { Link } from "react-scroll"
 
 export default function NavBar() {
     const [open, setOpen] = useState(false);
@@ -26,7 +26,7 @@ export default function NavBar() {
         <nav className="fixed top-0 left-0 z-50 nav w-full border-b bg-white dark:bg-black">
             <div className="mx-auto flex max-w-screen-xl h-full items-center justify-between px-4">
                 {/* Logo */}
-                <a href="/">
+                <Link to="home" smooth={true} duration={500}>
                     <Image
                         src={logo}
                         alt="Logo"
@@ -34,18 +34,20 @@ export default function NavBar() {
                         height={210}
                         className="object-cover mb-3"
                     />
-                </a>
+                </Link>
 
                 {/* Desktop Nav Links */}
                 <div className="mx-auto hidden space-x-6 md:flex">
                     {navLinks.map(({ title, href }: { title: string, href: string }) => (
-                        <a
+                        <Link
                             key={href}
-                            href={href}
+                            to={href}
+                            smooth={true} 
+                            duration={500}
                             className="text-md font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
                         >
                             {title}
-                        </a>
+                        </Link>
                     ))}
                 </div>
 
@@ -75,9 +77,9 @@ export default function NavBar() {
                                 </SheetHeader>
                                 <div className="mt-2 flex flex-col space-y-4">
                                     {navLinks.map(({ title, href, icon: Icon }: INavLinksAndSocialMedia) => (
-                                        <a
+                                        <Link
                                             key={href}
-                                            href={href}
+                                            to={href}
                                             className={cn(
                                                 "px-4 py-2 rounded-lg transition-colors", buttonVariants({ variant: "ghost" })
                                             )}
@@ -86,7 +88,7 @@ export default function NavBar() {
                                                 <span><Icon /></span>
                                                 <span>{title}</span>
                                             </span>
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                             </SheetContent>

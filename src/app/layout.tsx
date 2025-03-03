@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/Footer/Footer";
 import { cn } from "@/lib/utils";
 import { ToastContainer } from 'react-toastify';
+import GoToTop from "@/components/Go-To-Top/GoToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-behavior-smooth duration-300">
+    <html lang="en" className="scroll-smooth">
       <body
         className={cn(geistSans.variable, geistMono.variable, `antialiased overflow-x-hidden selection:bg-primary selection:text-white`)}
       >
@@ -41,6 +42,7 @@ export default function RootLayout({
           <NavBar />
           {children}
           <Footer />
+          <GoToTop />
           <ToastContainer />
         </ThemeProvider>
       </body>

@@ -63,7 +63,7 @@ const Contact = () => {
     }
 
 
-    return <div className="relative flex flex-col items-center justify-center px-6 sm:px-12 pt-8 pb-16">
+    return <div className="relative flex flex-col items-center justify-center px-6 sm:px-12 pt-8 pb-16" id="contact">
         <Effect className="bottom-0 left-0 translate-x-[-50%] translate-y-[30%]" />
         <SectionTitle
             title="Contact Me"

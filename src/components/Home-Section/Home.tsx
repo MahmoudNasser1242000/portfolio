@@ -13,6 +13,7 @@ import { CircleArrowRight, Download } from "lucide-react";
 import logo from "../../../public/assets/images/profile.png";
 import Image from "next/image";
 import { Effect } from "../ui/effects";
+import SectionLinks from "../Section-Links/SectionLinks";
 
 const Home = () => {
     return <div id="home" className="pb-16 pt-36 px-6 sm:px-[70px] md:px-20 lg:px-16 flex justify-center">
@@ -65,14 +66,7 @@ const Home = () => {
                         </span>
                     </p>
                     <div className="mt-6 flex items-center space-x-4">
-                        <a
-                            href="#projects"
-                            className={cn("transition-colors", buttonVariants({ variant: "default", size: "lg" }))}
-                        >
-                            <span>My Works</span>
-                            <CircleArrowRight />
-                        </a>
-            
+                        <SectionLinks link="projects" title="My Works" />
                         <a
                             href="/assets/files/Mahmoud-Nasser-CV.pdf"
                             target="_blank"

@@ -139,3 +139,12 @@ body {
 .Toastify__close-button {
   @apply pr-3 sm:pr-1;      
 }
+
+.ChevronsUp {
+  width: 26px !important;
+  height: 26px !important;
+}
+
+a {
+  cursor: pointer;
+}

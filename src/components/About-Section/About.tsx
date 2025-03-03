@@ -1,9 +1,8 @@
 import React from "react";
 import { Effect } from "../ui/effects";
 import { CircleArrowRight, Section } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "../ui/button";
 import SectionTitle from "../Section-Title/SectionTitle";
+import SectionLinks from "../Section-Links/SectionLinks";
 
 const About = () => {
     return <div className="relative px-8 sm:px-0 flex items-center justify-center my-16" id="about">
@@ -29,13 +28,7 @@ const About = () => {
                     <span className="text-[35px] font-bold w-full">+12</span>
                     <span className="text-gray-600">Completed Projects</span>
                 </p>
-                <a
-                    href="#skills"
-                    className={cn("transition-colors mb-2", buttonVariants({ variant: "default", size: "lg" }))}
-                >
-                    <span>Discover Skills</span>
-                    <CircleArrowRight />
-                </a>
+                <SectionLinks link="skills" title="Discover Skills" />
             </div>
         </div>
     </div>
