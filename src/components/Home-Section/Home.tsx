@@ -9,12 +9,11 @@ import {
 import { INavLinksAndSocialMedia } from "@/types/interfaces";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
-import { CircleArrowRight, Download } from "lucide-react";
-import logo from "../../../public/assets/images/profile.png";
-import Image from "next/image";
+import { Download } from "lucide-react";
 import { Effect } from "../ui/effects";
 import SectionLinks from "../Section-Links/SectionLinks";
 import TextAnimation from "../Text-Animation/TextAnimation";
+import HomeImage from "./Home-Image/HomeImage";
 
 const Home = () => {
     return <div id="home" className="pb-16 pt-36 px-6 sm:px-[70px] md:px-20 lg:px-16 flex justify-center">
@@ -59,7 +58,7 @@ const Home = () => {
                             Skilled in scheduling meetings and appointments and organizing office operations. Punctual
                             professional committed to satisfying customer needs and meeting office demands.
                         </span>
-            
+
                         <span className="w-full">
                             Passionate and skilled Front-End Developer with a strong background in JavaScript, and
                             modern frameworks like React and Next.js. skilled in developing dynamic and responsive web
@@ -80,7 +79,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            
+
             {/* Profile Image */}
             <div className="flex items-center justify-center mt-6 sm:mt-0 w-full">
                 <div className="w-[280px] h-[280px] relative translate-x-[-12px] sm:translate-x-0">
@@ -99,14 +98,9 @@ const Home = () => {
                         size={"sm"}
                         className="bottom-[18%] left-[-6%] rotate-12"
                     />
-                    <div className="size-full rounded-full relative">
-                        <Effect className="size-full top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]" />
-                        <Image
-                            src={logo}
-                            alt="profile img"
-                            className="object-cover w-full h-full rounded-full ring-4 ring-primary ring-offset-[5px] ring-offset-background"
-                        />
-                    </div>
+
+                    {/* Home Image */}
+                    <HomeImage />
                 </div>
             </div>
         </div>
