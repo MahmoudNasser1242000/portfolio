@@ -14,6 +14,7 @@ import logo from "../../../public/assets/images/profile.png";
 import Image from "next/image";
 import { Effect } from "../ui/effects";
 import SectionLinks from "../Section-Links/SectionLinks";
+import TextAnimation from "../Text-Animation/TextAnimation";
 
 const Home = () => {
     return <div id="home" className="pb-16 pt-36 px-6 sm:px-[70px] md:px-20 lg:px-16 flex justify-center">
@@ -47,7 +48,7 @@ const Home = () => {
                 </ul>
                 <div className="px-6 sm:px-0">
                     <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100">
-                        Hi👋, I'm <span className="text-primary">Mahmoud Nasser</span>
+                        Hi👋, I'm <TextAnimation title1="Mahmoud Nasser" title2="Web Developer" />
                     </h1>
                     <p className="text-lg my-4 text-gray-600 dark:text-gray-300">
                         Frontend Developer

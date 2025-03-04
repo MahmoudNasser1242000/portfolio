@@ -1,13 +1,18 @@
 "use client"
 import { ChevronsUp } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { Button, buttonVariants } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { Link } from "react-scroll";
 
 const GoToTop = () => {
-    const [ArrowUp, setArrowUp] = useState<boolean>(false);
+    const [ArrowUp, setArrowUp] = useState<boolean>();
     useEffect(() => {
+        if (window.scrollY >= 200) {
+            setArrowUp(true)
+        } else {
+            setArrowUp(false)
+        }
         window.addEventListener("scroll", () => {
             // console.log('====================================');
             // console.log(window.scrollY);
