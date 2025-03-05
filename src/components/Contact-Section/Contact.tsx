@@ -19,7 +19,6 @@ import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
 import { InferType } from "yup";
 import { Send } from "lucide-react";
-import 'dotenv/config'
 import { addToast } from "@/lib/toast";
 import { Effect } from "../ui/effects";
 import { useTranslations } from "next-intl";
