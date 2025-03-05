@@ -13,11 +13,13 @@ import InfoItem from "../Info-Item/InfoItem";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
+import { useTranslations } from "next-intl";
 
 
 const DialogProjectContent = ({ project }: { project: IProjects }) => {
     const [imgUrl, setImgUrl] = useState<string>(urlFor(project.images[0]).url());
 
+    const t = useTranslations("ProjectsSection")
     return <>
         <DialogContent className="sm:max-w-2xl lg:max-w-5xl p-0 dialogContent overflow-auto h-[90%]">
             <DialogHeader>
@@ -55,13 +57,13 @@ const DialogProjectContent = ({ project }: { project: IProjects }) => {
                     <Separator />
                     <div className="py-5">
                         <ul className="text-lg">
-                            <InfoItem Icon={Calendar} label="PublishedAt">
+                            <InfoItem Icon={Calendar} label={t("publishedAt")}>
                                 <span>{project.publishedAt.toLocaleString()}</span>
                             </InfoItem>
-                            <InfoItem Icon={LayoutDashboard} label="Layout">
+                            <InfoItem Icon={LayoutDashboard} label={t("layout")}>
                                 <span>{project.isResponsive ? "Responsive" : "N/A"}</span>
                             </InfoItem>
-                            <InfoItem Icon={Tags} label="Tags">
+                            <InfoItem Icon={Tags} label={t("tags")}>
                                 <div className="flex items-start justify-start flex-wrap">
                                     {project.tags.map((tag) => (
                                         <span className={cn("mr-2 mb-2 cursor-pointer", buttonVariants({ variant: "outline", size: "sm" }))}>
@@ -76,25 +78,25 @@ const DialogProjectContent = ({ project }: { project: IProjects }) => {
                     <div className="flex items-center gap-x-4 my-8">
                         {
                             project.githubLink.length > 1 ? (
-                                <div className="w-fit space-x-0 sm:space-x-2 space-y-2 sm:space-y-0">
+                                <div className="w-fit flex items-center gap-x-0 sm:gap-x-2 gap-y-2 sm:gap-y-0">
                                     <a href={project.githubLink[0]} target="_blank" className={cn(buttonVariants({ variant: "default" }))}>
                                         <Github />
-                                        <span>View Frontend Repo</span>
+                                        <span>{t("frontendRepo")}</span>
                                     </a>
                                     <a href={project.githubLink[1]} target="_blank" className={cn(buttonVariants({ variant: "default" }))}>
                                         <Github />
-                                        <span>View Backend Repo</span>
+                                        <span>{t("backendRepo")}</span>
                                     </a>
                                 </div>
                             ) : <a href={project.githubLink[0]} target="_blank" className={cn(buttonVariants({ variant: "default" }))}>
                                 <Github />
-                                <span>View Frontend Repo</span>
+                                <span>{t("projectRepo")}</span>
                             </a>
                         }
                         {
                             project.demoLink && <a href={project.githubLink[0]} target="_blank" className={cn(buttonVariants({ variant: "outline" }))}>
                                 <Eye />
-                                <span>View Project Demo</span>
+                                <span>{t("demo")}</span>
                             </a>
                         }
                     </div>

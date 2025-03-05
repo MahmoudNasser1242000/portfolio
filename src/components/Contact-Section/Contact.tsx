@@ -22,6 +22,7 @@ import { Send } from "lucide-react";
 import 'dotenv/config'
 import { addToast } from "@/lib/toast";
 import { Effect } from "../ui/effects";
+import { useTranslations } from "next-intl";
 
 const Contact = () => {
     const form = useForm<InferType<typeof schema>>({
@@ -62,12 +63,12 @@ const Contact = () => {
         }
     }
 
-
+    const t = useTranslations("ContactSection")
     return <div className="relative flex flex-col items-center justify-center px-6 sm:px-12 pt-8 pb-16" id="contact">
         <Effect className="bottom-0 left-0 translate-x-[-50%] translate-y-[30%]" />
         <SectionTitle
-            title="Contact Me"
-            desc="If You'v Any Comments Or Feedback "
+            title={t("title")}
+            desc={t("desc")}
             className="justify-center items-center"
             h_size="30"
         />
@@ -79,9 +80,9 @@ const Contact = () => {
                         name="username"
                         render={({ field }) => (
                             <FormItem className="w-full sm:w-[49%]">
-                                <FormLabel>Your Name</FormLabel>
+                                <FormLabel>{t("name")}</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="User name..." {...field} />
+                                    <Input placeholder={`${t("name")}...`} {...field} />
                                 </FormControl>
                                 <FormDescription>
                                     {/* {form.formState.errors.username && <span>{form.formState.errors.username.message}</span>} */}
@@ -96,9 +97,9 @@ const Contact = () => {
                         name="email"
                         render={({ field }) => (
                             <FormItem className="w-full sm:w-[49%]">
-                                <FormLabel>Your Email</FormLabel>
+                                <FormLabel>{t("email")}</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Your Email..." {...field} />
+                                    <Input placeholder={`${t("email")}...`} {...field} />
                                 </FormControl>
                                 <FormDescription>
                                     {/* {form.formState.errors.email && <span>{form.formState.errors.email.message}</span>} */}
@@ -113,9 +114,9 @@ const Contact = () => {
                         name="message"
                         render={({ field }) => (
                             <FormItem className="w-full">
-                                <FormLabel>Message</FormLabel>
+                                <FormLabel>{t("msg")}</FormLabel>
                                 <FormControl>
-                                    <Textarea placeholder="Message..." {...field} />
+                                    <Textarea placeholder={`${t("msg")}...`} {...field} />
                                 </FormControl>
                                 <FormDescription>
                                     {/* {form.formState.errors.message && <span>{form.formState.errors.message.message}</span>} */}
@@ -125,7 +126,7 @@ const Contact = () => {
                         )}
                     />
                     <Button type="submit">
-                        <span>Send Mail</span>
+                        <span>{t("send")}</span>
                         <Send />
                     </Button>
                 </form>

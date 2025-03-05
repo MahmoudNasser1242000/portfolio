@@ -21,12 +21,21 @@
     },
     "SkillsSection": {
       "title": "My Skills",
-      "desc": "My Technical Proficiency"
+      "desc": "My Technical Proficiency",
+      "frontend": "frontend",
+      "tools": "tools"
     },
     "ProjectsSection": {
       "title": "My Projects",
       "desc": "Some Web Projects I've Worked On",
-      "github": "See More Projects"    
+      "github": "See More Projects",
+      "frontendRepo": "View Frontend Repo",
+      "backendRepo": "View Backend Repo",
+      "projectRepo": "View Project Repo",
+      "demo": "View Project Demo",
+      "publishedAt": "PublishedAt",
+      "layout": "Layout",
+      "tags": "Tags"
     },
     "ContactSection": {
       "title": "Contact Me",

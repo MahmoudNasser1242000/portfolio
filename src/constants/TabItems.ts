@@ -7,6 +7,6 @@ export const tabItems: ITabItems[] = [
 ]
 
 export const tabItemsAr: ITabItems[] = [
-    {title: "frontend", value: "الواجهة الامامية", icon: AppWindow},
-    {title: "tools", value: "اداوات", icon: PencilRuler},
+    {title: "الواجهة الامامية", value: "frontend", icon: AppWindow},
+    {title: "الاداوات", value: "tools", icon: PencilRuler},
 ]

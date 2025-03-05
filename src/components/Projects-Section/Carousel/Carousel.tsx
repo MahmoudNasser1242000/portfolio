@@ -11,12 +11,11 @@ import Autoplay from "embla-carousel-autoplay";
 import { IProjects } from "@/types/interfaces";
 import ProjectItem from "../Project-Item/ProjectItem";
 
-
 const CarouselItems = ({ projects }: { projects: IProjects[] }) => {
     const plugin = React.useRef(
         Autoplay({ delay: 2000, stopOnInteraction: true })
     )
-    return <>
+    return <div dir="ltr">
         <Carousel
             plugins={[plugin.current]}
             onMouseEnter={plugin.current.stop}
@@ -34,7 +33,7 @@ const CarouselItems = ({ projects }: { projects: IProjects[] }) => {
             <CarouselPrevious />
             <CarouselNext />
         </Carousel>
-    </>;
+    </div>;
 };
 
 export default CarouselItems;

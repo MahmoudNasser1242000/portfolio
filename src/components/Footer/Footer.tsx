@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { socialMedia } from "@/constants/socialMedia";
 import {
     Tooltip,
@@ -7,13 +7,27 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { navLinks } from "@/constants/navLinks";
+import { navLinks, navLinksAr } from "@/constants/navLinks";
 import { INavLinksAndSocialMedia } from "@/types/interfaces";
 import logo from "../../../public/assets/images/main_logo.svg";
 import Image from "next/image";
 import { Link } from "react-scroll";
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
 const Footer = () => {
+    const t = useTranslations("Footer");
+    const params = useParams();
+    const locale = params.locale;
+    const [list, setList] = useState(navLinks);
+
+    useEffect(() => {
+        if (locale === "ar") {
+            setList(navLinksAr)
+        } else {
+            setList(navLinks)
+        }
+    }, [locale]);
     return (
         <>
             <footer className="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
@@ -29,11 +43,11 @@ const Footer = () => {
                     </div>
 
                     <p className="mx-auto max-w-md text-center leading-relaxed text-gray-500">
-                        You can contact me and also explore more of my work through my social media links. I will be happy to respond to you and hear all your opinions.
+                        {t("desc")}
                     </p>
 
                     <ul className="mt-6 flex flex-wrap justify-center gap-6">
-                        {navLinks.map(({ title, href }: { title: string, href: string }) => (
+                        {list.map(({ title, href }: { title: string, href: string }) => (
                             <Link
                                 key={href}
                                 to={href}

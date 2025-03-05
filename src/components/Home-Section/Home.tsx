@@ -14,8 +14,10 @@ import { Effect } from "../ui/effects";
 import SectionLinks from "../Section-Links/SectionLinks";
 import TextAnimation from "../Text-Animation/TextAnimation";
 import HomeImage from "./Home-Image/HomeImage";
+import { useTranslations } from "next-intl";
 
 const Home = () => {
+    const t = useTranslations("HomeSection")
     return <div id="home" className="pb-16 pt-36 px-6 sm:px-[70px] md:px-20 lg:px-16 flex justify-center">
         <div className="flex gap-y-12 flex-col-reverse lg:flex-row items-center justify-between w-[95%] sm:w-auto">
             {/* Personal Info */}
@@ -47,33 +49,29 @@ const Home = () => {
                 </ul>
                 <div className="px-6 sm:px-0">
                     <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100">
-                        Hi👋, I'm <TextAnimation title1="Mahmoud Nasser" title2="Web Developer" />
+                        {t("title")} <TextAnimation title1={t("text-animation1")} title2={t("text-animation2")} />
                     </h1>
                     <p className="text-lg my-4 text-gray-600 dark:text-gray-300">
-                        Frontend Developer
+                        {t("job")}
                     </p>
                     <p className="text-lg text-gray-500 w-full lg:w-[80%] flex flex-col space-y-3">
                         <span className="w-full">
-                            Well-rounded front end development possessing excellent clerical and team support abilities.
-                            Skilled in scheduling meetings and appointments and organizing office operations. Punctual
-                            professional committed to satisfying customer needs and meeting office demands.
+                            {t("presentation1")}
                         </span>
 
                         <span className="w-full">
-                            Passionate and skilled Front-End Developer with a strong background in JavaScript, and
-                            modern frameworks like React and Next.js. skilled in developing dynamic and responsive web
-                            applications with a keen eye for detail and design.
+                            {t("presentation2")}
                         </span>
                     </p>
-                    <div className="mt-6 flex items-center space-x-4">
-                        <SectionLinks link="projects" title="My Works" />
+                    <div className="mt-6 flex items-center gap-x-4">
+                        <SectionLinks link="projects" title={t("myWorks")} />
                         <a
                             href="/assets/files/Mahmoud-Nasser-CV.pdf"
                             target="_blank"
                             download
                             className={cn("transition-colors", buttonVariants({ variant: "outline", size: "lg" }))}
                         >
-                            <span>Download CV</span>
+                            <span>{t("cv")}</span>
                             <Download />
                         </a>
                     </div>

@@ -14,6 +14,12 @@ export interface ITabItems {
     icon: LucideIcon;
 }
 
+export interface IParams {
+    params: {
+        locale: string
+    }
+}
+
 //schemas for sanity
 export interface IImage {
     image: {
