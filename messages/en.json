@@ -1,0 +1,42 @@
+{
+    "HomeSection": {
+      "title": "Hi👋, I'm",
+      "text-animation1": "Mahmoud Nasser",
+      "text-animation2": "Web Developer",
+      "job": "Frontend Developer",
+      "presentation1": "Well-rounded front end development possessing excellent clerical and team support abilities. Skilled in scheduling meetings and appointments and organizing office operations. Punctual professional committed to satisfying customer needs and meeting office demands.",
+      "presentation2": "Passionate and skilled Front-End Developer with a strong background in JavaScript, and modern frameworks like React and Next.js. skilled in developing dynamic and responsive web applications with a keen eye for detail and design.",
+      "myWorks": "My Works",
+      "cv": "Download CV"
+    },
+    "AboutSection": {
+      "title": "About Me",
+      "desc": "A Quick Introduction About Me",
+      "aboutMe": "I obtained a bachelor’s degree with distinction from the High Institute for Management and Information Technology - Kafr Elsheikh, I also obtained a certificate from Route Academy in Alexandria after one year of training in the field of frontend development.",
+      "experience": "Years Experience",
+      "completedProjects": "Completed Projects",
+      "discoverSkills": "Discover Skills",
+      "yearsExp": "+2",
+      "projectsNum": "+12"
+    },
+    "SkillsSection": {
+      "title": "My Skills",
+      "desc": "My Technical Proficiency"
+    },
+    "ProjectsSection": {
+      "title": "My Projects",
+      "desc": "Some Web Projects I've Worked On",
+      "github": "See More Projects"    
+    },
+    "ContactSection": {
+      "title": "Contact Me",
+      "desc": "If You'v Any Comments Or Feedback",
+      "name": "Your Name" ,   
+      "email": "Your Email",   
+      "msg": "Message", 
+      "send": "Send Mail"
+    },
+    "Footer": {
+      "desc": "You can contact me and also explore more of my work through my social media links. I will be happy to respond to you and hear all your opinions."
+    }
+  }

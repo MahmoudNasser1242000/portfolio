@@ -1,19 +1,18 @@
-import type { NextConfig } from "next";
+import createNextIntlPlugin from 'next-intl/plugin';
+import type { NextConfig } from 'next';
+
+const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-module.exports = {
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'cdn.sanity.io',
-        pathname: '/images/gfvdpcoq/production/**',
-      },
-    ],
-  },
-}
+        pathname: '/images/gfvdpcoq/production/**'
+      }
+    ]
+  }
+};
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

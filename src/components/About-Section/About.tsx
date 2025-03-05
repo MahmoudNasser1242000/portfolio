@@ -1,6 +1,5 @@
 import React from "react";
 import { Effect } from "../ui/effects";
-import { CircleArrowRight, Section } from "lucide-react";
 import SectionTitle from "../Section-Title/SectionTitle";
 import SectionLinks from "../Section-Links/SectionLinks";
 

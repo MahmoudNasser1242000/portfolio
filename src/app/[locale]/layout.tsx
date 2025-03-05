@@ -7,6 +7,10 @@ import Footer from "@/components/Footer/Footer";
 import { cn } from "@/lib/utils";
 import { ToastContainer } from 'react-toastify';
 import GoToTop from "@/components/Go-To-Top/GoToTop";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,31 +28,44 @@ export const metadata: Metadata = {
   keywords: "portfolio, frontend, developer, website, development, react.js, javascript, js, es6, html, css, next.js, jQuery, bootstrap, tailwind, cv"
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ locale: string }>;
+}) {
+  // Ensure that the incoming `locale` is valid
+  const { locale } = await params;
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang={locale} className="scroll-smooth">
       <head>
         <link rel="icon" href="/assets/images/favicon.svg" />
       </head>
       <body
         className={cn(geistSans.variable, geistMono.variable, `antialiased overflow-x-hidden selection:bg-primary selection:text-white`)}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NavBar />
-          {children}
-          <Footer />
-          <GoToTop />
-          <ToastContainer />
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <NavBar />
+            {children}
+            <Footer />
+            <GoToTop />
+            <ToastContainer />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

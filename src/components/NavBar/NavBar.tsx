@@ -19,6 +19,7 @@ import { navLinks } from "@/constants/navLinks";
 import { INavLinksAndSocialMedia } from "@/types/interfaces";
 import { cn } from "@/lib/utils";
 import { Link } from "react-scroll"
+import LangBtn from "../Lang-Btn/LangBtn";
 
 export default function NavBar() {
     const [open, setOpen] = useState(false);
@@ -42,7 +43,7 @@ export default function NavBar() {
                         <Link
                             key={href}
                             to={href}
-                            smooth={true} 
+                            smooth={true}
                             duration={500}
                             className="text-md font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
                         >
@@ -53,6 +54,9 @@ export default function NavBar() {
 
                 {/* Dark Mode Toggle + Mobile Menu */}
                 <div className="flex items-center space-x-2">
+                    <div className="hidden md:block">
+                        <LangBtn />
+                    </div>
                     <ModeToggle />
 
                     {/* Mobile Menu Button (hidden on desktop) */}
@@ -81,7 +85,7 @@ export default function NavBar() {
                                             key={href}
                                             to={href}
                                             className={cn(
-                                                "px-4 py-2 rounded-lg transition-colors", buttonVariants({ variant: "ghost" })
+                                                "px-4 py-2 rounded-lg transition-colors", buttonVariants({ variant: "ghost", className: "px-4" })
                                             )}
                                         >
                                             <span className="w-full flex items-center justify-start space-x-2">
@@ -90,6 +94,9 @@ export default function NavBar() {
                                             </span>
                                         </Link>
                                     ))}
+                                    <div className="w-full">
+                                        <LangBtn />
+                                    </div>
                                 </div>
                             </SheetContent>
                         </Sheet>

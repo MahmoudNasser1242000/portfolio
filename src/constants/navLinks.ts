@@ -8,3 +8,11 @@ export const navLinks: INavLinksAndSocialMedia[] = [
     { href: "projects", title: "Projects", icon: Book },
     { href: "contact", title: "Contact", icon: MessageSquareText },
 ];
+
+export const navLinksAr: INavLinksAndSocialMedia[] = [
+    { href: "home", title: "الصفحة الرئيسية", icon: House },
+    { href: "about", title: "عنا", icon: User },
+    { href: "skills", title: "مهارات", icon: Wrench },
+    { href: "projects", title: "مشاريع", icon: Book },
+    { href: "contact", title: "تواصل معنا", icon: MessageSquareText },
+];
