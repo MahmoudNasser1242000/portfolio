@@ -5,7 +5,7 @@ type TTheme = "dark" | "light"
 export const addToast = (theme: TTheme, status: TStatus) => {
     let msg: string;
     if (status === "success") {
-        msg = 'Email has been send successfully';
+        msg = 'Email has been sent successfully';
     } else {
         msg = 'Something went wrong!';
     }
