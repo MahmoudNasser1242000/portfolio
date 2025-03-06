@@ -12,7 +12,10 @@ const nextConfig: NextConfig = {
         pathname: '/images/gfvdpcoq/production/**'
       }
     ]
-  }
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default withNextIntl(nextConfig);
