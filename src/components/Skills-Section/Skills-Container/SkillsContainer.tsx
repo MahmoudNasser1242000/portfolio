@@ -1,8 +1,6 @@
 import { ISkills } from "@/types/interfaces";
 import React from "react";
 import SkillProgress from "../Skill-Progress/SkillProgress";
-import Image from "next/image";
-import { urlFor } from "@/sanity/lib/image";
 
 const SkillsContainer = ({
     skills,

@@ -1,8 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-
-// shadcn/ui components
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
     Sheet,
@@ -16,7 +14,7 @@ import { ModeToggle } from "./ModeToggle";
 
 import logo from "../../../public/assets/images/main_logo.svg";
 import { navLinks, navLinksAr } from "@/constants/navLinks";
-import { INavLinksAndSocialMedia, IParams } from "@/types/interfaces";
+import { INavLinksAndSocialMedia } from "@/types/interfaces";
 import { cn } from "@/lib/utils";
 import { Link } from "react-scroll"
 import LangBtn from "../Lang-Btn/LangBtn";

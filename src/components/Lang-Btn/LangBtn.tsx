@@ -8,7 +8,7 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 import { useRouter } from "next/navigation";
-import { Globe, Languages } from "lucide-react";
+import { Languages } from "lucide-react";
 
 const LangBtn = () => {
     const router = useRouter();
