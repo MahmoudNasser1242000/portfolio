@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
     Sheet,
@@ -9,10 +8,10 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, PaintbrushVertical } from "lucide-react";
 import { ModeToggle } from "./ModeToggle";
 
-import logo from "../../../public/assets/images/main_logo.svg";
+// import logo from "../../../public/assets/images/main_logo.svg";
 import { navLinks, navLinksAr } from "@/constants/navLinks";
 import { INavLinksAndSocialMedia } from "@/types/interfaces";
 import { cn } from "@/lib/utils";
@@ -38,15 +37,18 @@ export default function NavBar() {
         <nav className="fixed top-0 left-0 z-50 nav w-full border-b bg-white dark:bg-black">
             <div className="mx-auto flex max-w-screen-xl h-full items-center justify-between px-4">
                 {/* Logo */}
-                <Link to="home" smooth={true} duration={500}>
-                    <Image
-                        src={logo}
-                        alt="Logo"
-                        width={210}
-                        height={210}
-                        className="object-cover mb-3"
-                    />
-                </Link>
+                <p className="text-primary text-[26px] font-[900] py-4 font-mono">
+                    <Link to="home" smooth={true} duration={500}>
+                        {/*<Image
+                            src={logo}
+                            alt="Logo"
+                            width={210}
+                            height={210}
+                            className="object-cover mb-3"
+                        />*/}
+                        My Prort<PaintbrushVertical className="inline" />Folio
+                    </Link>
+                </p>
 
                 {/* Desktop Nav Links */}
                 <div className="mx-auto hidden gap-x-6 md:flex">
@@ -78,16 +80,19 @@ export default function NavBar() {
                                     <Menu className="h-5 w-5" />
                                 </Button>
                             </SheetTrigger>
-                            <SheetContent side={locale === "ar"? "right" : "left"} className="sm:w-[40%] md:w-[50%] w-[60%]  bg-white dark:bg-black">
+                            <SheetContent side={locale === "ar" ? "right" : "left"} className="sm:w-[40%] md:w-[50%] w-[60%]  bg-white dark:bg-black">
                                 <SheetHeader>
-                                    <SheetTitle className="text-xl font-bold text-gray-800 dark:text-gray-100">
-                                        <Image
+                                    <SheetTitle className="text-md font-bold text-gray-800 dark:text-gray-100">
+                                        {/* {<Image
                                             src={logo}
                                             alt="Logo"
                                             width={200}
                                             height={200}
-                                            className={`object-cover ${locale === "ar"? "mt-[-17px]" : "mt-[-20px]"} ${locale === "ar"? "mr-[25px]" : "ml-[-20px]"}`}
-                                        />
+                                            className={`object-cover ${locale === "ar" ? "mt-[-17px]" : "mt-[-20px]"} ${locale === "ar" ? "mr-[25px]" : "ml-[-20px]"}`}
+                                        />} */}
+                                        <p className={`text-primary ml-[-60px]`}>
+                                            My Prort<PaintbrushVertical className={`inline`} />Folio
+                                        </p>
                                     </SheetTitle>
                                 </SheetHeader>
                                 <div className="mt-2 flex flex-col gap-y-4">

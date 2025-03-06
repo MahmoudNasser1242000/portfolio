@@ -9,11 +9,10 @@ import {
 } from "@/components/ui/tooltip"
 import { navLinks, navLinksAr } from "@/constants/navLinks";
 import { INavLinksAndSocialMedia } from "@/types/interfaces";
-import logo from "../../../public/assets/images/main_logo.svg";
-import Image from "next/image";
 import { Link } from "react-scroll";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
+import { PaintbrushVertical } from "lucide-react";
 
 const Footer = () => {
     const t = useTranslations("Footer");
@@ -33,13 +32,18 @@ const Footer = () => {
             <footer className="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
                 <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8">
                     <div className="flex justify-center mb-1">
-                        <Link
-                            to="home"
-                            smooth={true}
-                            duration={500}
-                        >
-                            <Image src={logo} alt="log" width={360} height={360} className="object-cover" />
-                        </Link>
+                        <p className="text-primary text-[36px] font-[900] py-4">
+                            <Link to="home" smooth={true} duration={500}>
+                                {/*<Image
+                            src={logo}
+                            alt="Logo"
+                            width={210}
+                            height={210}
+                            className="object-cover mb-3"
+                        />*/}
+                                My Prort<PaintbrushVertical className="inline size-9" />Folio
+                            </Link>
+                        </p>
                     </div>
 
                     <p className="mx-auto max-w-md text-center leading-relaxed text-gray-500">
