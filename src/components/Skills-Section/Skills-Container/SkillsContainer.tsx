@@ -36,9 +36,9 @@ const SkillsContainer = ({
                         </div>
                         <span className="font-light">{skill.value}%</span>
                     </div>
-                    <p>
+                    <div>
                         <SkillProgress value={skill.value} />
-                    </p>
+                    </div>
                 </div>
             ))}
         </div>

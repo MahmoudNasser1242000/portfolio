@@ -30,7 +30,7 @@ const Contact = () => {
     async function onSubmit(data: IFormData) {
         const formData = new FormData();
 
-        formData.append("access_key", "3bab4c53-274b-47cf-81a9-852ca97e165e");
+        formData.append("access_key", `${process.env.NEXT_PUBLIC_WEB3DORM_ACCESS_KEY}`);
         formData.append("name", data.username);
         formData.append("email", data.email);
         formData.append("message", data.message);

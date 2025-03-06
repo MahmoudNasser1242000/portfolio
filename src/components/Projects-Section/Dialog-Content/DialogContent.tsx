@@ -19,7 +19,7 @@ import { useTranslations } from "next-intl";
 const DialogProjectContent = ({ project }: { project: IProjects }) => {
     const [imgUrl, setImgUrl] = useState<string>(urlFor(project.images[0]).url());
 
-    const t = useTranslations("ProjectsSection")
+    const t = useTranslations("ProjectsSection");
     return <>
         <DialogContent className="sm:max-w-2xl lg:max-w-5xl p-0 dialogContent overflow-auto h-[90%]">
             <DialogHeader>
@@ -66,7 +66,7 @@ const DialogProjectContent = ({ project }: { project: IProjects }) => {
                             <InfoItem Icon={Tags} label={t("tags")}>
                                 <div className="flex items-start justify-start flex-wrap">
                                     {project.tags.map((tag) => (
-                                        <span className={cn("mr-2 mb-2 cursor-pointer", buttonVariants({ variant: "outline", size: "sm" }))}>
+                                        <span key={tag} className={cn("mr-2 mb-2 cursor-pointer", buttonVariants({ variant: "outline", size: "sm" }))}>
                                             {tag}
                                         </span>
                                     ))}
