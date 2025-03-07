@@ -15,7 +15,7 @@ const About = () => {
                 className="-top-4 -right-5 rotate-12 z-[-10]"
             />
             <SectionTitle title={t("title")} desc={t("desc")} />
-            <p className="text-md text-gray-500 mt-6">
+            <p className="text-md text-gray-500 mt-6 text-center sm:text-start">
                 <span>
                     {t("aboutMe")}
                 </span>

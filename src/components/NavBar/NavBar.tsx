@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
     Sheet,
+    SheetClose,
     SheetContent,
     SheetHeader,
     SheetTitle,
@@ -46,7 +47,7 @@ export default function NavBar() {
                             height={210}
                             className="object-cover mb-3"
                         />*/}
-                        My Prort<PaintbrushVertical className="inline" />Folio
+                        My Por<PaintbrushVertical className="inline" />Folio
                     </Link>
                 </p>
 
@@ -90,18 +91,18 @@ export default function NavBar() {
                                             height={200}
                                             className={`object-cover ${locale === "ar" ? "mt-[-17px]" : "mt-[-20px]"} ${locale === "ar" ? "mr-[25px]" : "ml-[-20px]"}`}
                                         />} */}
-                                        <p className={`text-primary ml-[-60px]`}>
-                                            My Prort<PaintbrushVertical className={`inline`} />Folio
+                                        <p className={`text-primary absolute ${locale === "ar"? "right-4" : "left-4"} top-5 text-xl`}>
+                                            My Por<PaintbrushVertical className={`inline`} />Folio
                                         </p>
                                     </SheetTitle>
                                 </SheetHeader>
-                                <div className="mt-2 flex flex-col gap-y-4">
+                                <div className="mt-10 flex flex-col gap-y-4">
                                     {list.map(({ title, href, icon: Icon }: INavLinksAndSocialMedia) => (
                                         <Link
                                             key={href}
                                             to={href}
                                             className={cn(
-                                                "px-4 py-2 rounded-lg transition-colors", buttonVariants({ variant: "ghost", className: "px-4" })
+                                                `"px-4" ${locale === "ar"? "mr-[-10px]": "ml-[-10px]"} py-2 rounded-lg transition-colors`, buttonVariants({ variant: "ghost", className: "px-4" })
                                             )}
                                         >
                                             <span className="w-full flex items-center justify-start gap-x-2">

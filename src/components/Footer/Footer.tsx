@@ -41,7 +41,7 @@ const Footer = () => {
                             height={210}
                             className="object-cover mb-3"
                         />*/}
-                                My Prort<PaintbrushVertical className="inline size-9" />Folio
+                                My Por<PaintbrushVertical className="inline size-9" />Folio
                             </Link>
                         </p>
                     </div>
