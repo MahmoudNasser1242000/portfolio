@@ -19,7 +19,7 @@ const LangBtn = () => {
             }}
         >
             <SelectTrigger>
-                <SelectValue placeholder={<Languages className="size-5" />} />
+                <SelectValue placeholder={<Languages className="size-5 dark:text-white text-black" />} />
             </SelectTrigger>
             <SelectContent>
                 <SelectItem value="en" className="cursor-pointer">
