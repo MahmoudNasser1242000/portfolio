@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 const About = () => {
     const t = useTranslations("AboutSection")
     return <div className="relative px-8 sm:px-0 flex items-center justify-center my-16" id="about">
-        <Effect className="-left-32 md:-left-44 -top-12" />
+        <Effect className="top-[50%] left-0 translate-y-[-50%] translate-x-[-50%]" />
         <div className="relative w-[95%] max-w-[50rem] bg-background/90 border px-8 py-6 rounded-[12px]">
             <Effect
                 variant={"square"}

@@ -45,10 +45,11 @@ export default async function RootLayout({
   // side is the easiest way to get started
   const messages = await getMessages();
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className="scroll-smooth">
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className="scroll-smooth overflow-x-hidden">
       <head>
         <link rel="icon" href="/assets/images/favicon.svg" />
         <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
         className={cn(geistSans.variable, geistMono.variable, `antialiased overflow-x-hidden selection:bg-primary selection:text-white`)}
