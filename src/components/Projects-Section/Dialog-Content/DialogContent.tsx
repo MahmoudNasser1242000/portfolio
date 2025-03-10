@@ -21,7 +21,7 @@ const DialogProjectContent = ({ project }: { project: IProjects }) => {
 
     const t = useTranslations("ProjectsSection");
     return <>
-        <DialogContent className="sm:max-w-2xl lg:max-w-5xl p-0 dialogContent overflow-auto h-[90%]">
+        <DialogContent className="sm:max-w-2xl lg:max-w-5xl p-0 dialogContent overflow-auto h-[90%] z-[2000]">
             <DialogHeader>
                 <DialogTitle className="text-center bg-muted py-6 capitalize text-foreground">{project.title}</DialogTitle>
             </DialogHeader>
@@ -75,10 +75,10 @@ const DialogProjectContent = ({ project }: { project: IProjects }) => {
                         </ul>
                     </div>
                     <Separator />
-                    <div className="flex items-center gap-x-4 my-8">
+                    <div className="flex items-center flex-wrap gap-2 my-8">
                         {
                             project.githubLink.length > 1 ? (
-                                <div className="w-fit flex items-center gap-x-0 sm:gap-x-2 gap-y-2 sm:gap-y-0">
+                                <div className="w-fit flex flex-wrap items-center gap-x-2 gap-y-2 sm:gap-y-0">
                                     <a href={project.githubLink[0]} target="_blank" className={cn(buttonVariants({ variant: "default" }))}>
                                         <Github />
                                         <span>{t("frontendRepo")}</span>
