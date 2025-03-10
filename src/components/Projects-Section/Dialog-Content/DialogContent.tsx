@@ -21,7 +21,7 @@ const DialogProjectContent = ({ project }: { project: IProjects }) => {
 
     const t = useTranslations("ProjectsSection");
     return <>
-        <DialogContent className="sm:max-w-2xl lg:max-w-5xl p-0 dialogContent overflow-auto h-[90%] z-[2000]">
+        <DialogContent className="sm:max-w-2xl lg:max-w-5xl p-0 dialogContent overflow-auto h-[92%] z-[2000]">
             <DialogHeader>
                 <DialogTitle className="text-center bg-muted py-6 capitalize text-foreground">{project.title}</DialogTitle>
             </DialogHeader>
