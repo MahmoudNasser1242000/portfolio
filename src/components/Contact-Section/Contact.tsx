@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SectionTitle from "../Section-Title/SectionTitle";
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
@@ -22,47 +22,53 @@ import { Send } from "lucide-react";
 import { addToast } from "@/lib/toast";
 import { Effect } from "../ui/effects";
 import { useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
 
 const Contact = () => {
+    const { resolvedTheme } = useTheme();
+    const [themes, setTheme] = useState<string>("");
+
+    useEffect(() => {
+        if (resolvedTheme === "dark") {
+            setTheme("dark")
+        } else {
+            setTheme("light")
+        }
+    }, [resolvedTheme]);
+
     const form = useForm<InferType<typeof schema>>({
         resolver: yupResolver(schema),
+        defaultValues: {
+            username: "",  // Default to an empty string
+            email: "",
+            message: "",
+        },
     })
+
     async function onSubmit(data: IFormData) {
-        const formData = new FormData();
-
-        formData.append("access_key", `${process.env.NEXT_PUBLIC_WEB3DORM_ACCESS_KEY}`);
-        formData.append("name", data.username);
-        formData.append("email", data.email);
-        formData.append("message", data.message);
-
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-
         const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Accept: "application/json"
+                Accept: "application/json",
             },
-            body: json
+            body: JSON.stringify({
+                access_key: process.env.NEXT_PUBLIC_WEB3DORM_ACCESS_KEY,
+                name: data.username,
+                email: data.email,
+                message: data.message,
+            }),
         });
         const result = await response.json();
         if (result.success) {
-            if (localStorage.getItem("theme") === "dark") {
-                addToast("dark", "success")
-            } else {
-                addToast("light", "success")
-            }
+            addToast(themes as "light" | "dark", "success");
         } else {
-            if (localStorage.getItem("theme") === "dark") {
-                addToast("dark", "warn")
-            } else {
-                addToast("light", "warn")
-            }
+            addToast(themes as "light" | "dark", "warn");
         }
     }
 
-    const t = useTranslations("ContactSection")
+    const t = useTranslations("ContactSection");
+    
     return <div className="relative flex flex-col items-center justify-center px-6 sm:px-12 pt-8 pb-16" id="contact">
         <Effect className="bottom-0 left-0 translate-x-[-50%] translate-y-[30%]" />
         <SectionTitle
