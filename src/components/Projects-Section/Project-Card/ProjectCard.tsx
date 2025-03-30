@@ -13,8 +13,8 @@ const ProjectCard = ({project}: {project: IProjects}) => {
                 .fit("crop") // optional: control cropping
                 .url()}
             alt={`${project.title} project Image`}
-            width={400}
-            height={400}
+            width={800}
+            height={800}
             className="object-cover size-full rounded-sm group-hover:scale-105 transition duration-300 ease-in-out"
         />
         <h3 className="absolute bottom-3 left-4 text-foreground group-hover:text-primary transition duration-300 ease-in-out font-[600] text-md">

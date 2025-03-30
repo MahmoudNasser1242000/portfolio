@@ -30,8 +30,8 @@ const DialogProjectContent = ({ project }: { project: IProjects }) => {
                     <Image
                     src={imgUrl}
                         alt={`${project.title} project Image 1`}
-                        width={400}
-                        height={400}
+                        width={850}
+                        height={850}
                         className="w-full h-[300px]"
                     />
                     <div className="object-cover flex items-center flex-wrap mt-3 gap-2">
