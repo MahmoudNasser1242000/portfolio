@@ -94,7 +94,7 @@ const DialogProjectContent = ({ project }: { project: IProjects }) => {
                             </a>
                         }
                         {
-                            project.demoLink && <a href={project.githubLink[0]} target="_blank" className={cn(buttonVariants({ variant: "outline" }))}>
+                            project.demoLink && <a href={project.demoLink} target="_blank" className={cn(buttonVariants({ variant: "outline" }))}>
                                 <Eye />
                                 <span>{t("demo")}</span>
                             </a>
