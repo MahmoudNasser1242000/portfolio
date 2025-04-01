@@ -12,6 +12,8 @@ const HomeImage = () => {
             <Image
                 src={logo}
                 alt="profile img"
+                width={800}
+                height={800}
                 className="object-cover w-full h-full rounded-full ring-4 ring-primary ring-offset-[5px] ring-offset-background"
             />
         </motion.div>
