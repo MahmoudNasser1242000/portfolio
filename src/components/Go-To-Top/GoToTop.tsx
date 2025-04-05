@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { Link } from "react-scroll";
-import { easeInOut, motion } from "motion/react";
+import { motion } from "motion/react";
 
 const GoToTop = () => {
     const [ArrowUp, setArrowUp] = useState<boolean>();
@@ -15,9 +15,6 @@ const GoToTop = () => {
             setArrowUp(false);
         }
         window.addEventListener("scroll", () => {
-            // console.log('====================================');
-            // console.log(window.scrollY);
-            // console.log('====================================');
             if (window.scrollY >= 400) {
                 setArrowUp(true);
             } else {
@@ -31,12 +28,12 @@ const GoToTop = () => {
     return (
         <motion.span
             className={cn(
-                "fixed bottom-7 right-4 sm:right-6 size-10 z-[2000] opacity-100 duration-500 ease-out",
+                "fixed bottom-7 right-4 sm:right-6 size-10 cursor-pointer z-[2000] opacity-100 duration-500 ease-out",
                 !ArrowUp && "opacity-0 cursor-none z-0",
                 buttonVariants({
                     variant: "default",
                     className:
-                        "px-6 transition-all sm:hover:scale-110 duration-500 ease-out",
+                        "px-6 transition-all duration-500 ease-out",
                 })
             )}
             initial={{ y: 0 }}
