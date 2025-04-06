@@ -21,7 +21,7 @@ const CarouselItems = ({ projects }: { projects: IProjects[] }) => {
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
         >
-            <CarouselContent>
+            <CarouselContent className="w-[270px] sm:w-auto">
                 {
                     projects.map((project) => (
                         <CarouselItem key={project._id} className="md:basis-1/2 lg:basis-1/3 flex items-center justify-center sm:flex-none sm:justify-normal">
@@ -30,8 +30,8 @@ const CarouselItems = ({ projects }: { projects: IProjects[] }) => {
                     ))
                 }
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="top-[50%] translate-y-[-50%] left-[-40px] sm:left-[-50px]" />
+            <CarouselNext className="top-[50%] translate-y-[-50%] right-[-40px] sm:right-[-50px]" />
         </Carousel>
     </div>;
 };

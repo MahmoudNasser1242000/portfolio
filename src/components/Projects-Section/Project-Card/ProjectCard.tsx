@@ -3,9 +3,9 @@ import { IProjects } from "@/types/interfaces";
 import Image from "next/image";
 import React from "react";
 
-const ProjectCard = ({project}: {project: IProjects}) => {
+const ProjectCard = ({ project }: { project: IProjects }) => {
     return <div className="relative group h-[300px] rounded-sm border shadow hover:shadow-lg transition duration-300 ease-in-out overflow-hidden">
-        <figure className="absolute top-0 left-0 size-full bg-gradient-to-t from-background/70 to-transparent transition duration-300 ease-in-out"/>
+        <figure className="absolute top-0 left-0 size-full bg-gradient-to-t from-background/70 to-transparent transition duration-300 ease-in-out" />
         <Image
             src={urlFor(project.images[0])
                 // .width(400)
